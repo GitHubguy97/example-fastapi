@@ -10,7 +10,6 @@ router = APIRouter(
 )
 
 @router.get("/", response_model=List[schemas.PostOut])
-# @router.get("/")
 def get_posts(db: Session = Depends(get_db),
               current_user: int = Depends(oauth2.get_current_user),
               limit: int = 10,
